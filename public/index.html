@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library</title>
+    <link rel="icon" href="pics/favicon.ico" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/f67a4efbb2.js"></script>
+</head>
+
+<body class="bg" ng-app="library">
+    <navbar></navbar>
+    <div class="container-fluid">
+        <div ui-view></div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>-->
+
+    <script src="./script.js"></script>
+    <script src="./router.js"></script>
+
+    <script src="services/loginService.js"></script>
+    <script src="services/copyService.js"></script>
+    <script src="services/bookService.js"></script>
+    
+    <!--<script src="services/addBookService.js"></script>-->
+    
+    
+    <script src="components/registerModal/register.comp.js"></script>
+    <script src="components/login/login.comp.js"></script>
+    <script src="components/navbar/navbar.comp.js"></script>
+    <script src="components/booksDashboard/booksDashboard.comp.js"></script>
+    <script src="components/borrowersDashboard/borrowersDashboard.comp.js"></script>
+    <script src="components/addBorrowerModal/addBorrowerModal.comp.js"></script>
+    <script src="components/addBookModal/addBookModal.comp.js"></script>
+    <script src="components/bookDetailsModal/bookDetailsModal.comp.js"></script>
+    <!--<script src="components/report/reportCtrl.js"></script>-->
+    <!--<script src="script/borrowCopyModal.comp.js"></script>-->
+    <!--<script src="script/bookCopy.comp.js"></script>-->
+
+</body>
+
+</html>

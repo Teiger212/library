@@ -1,0 +1,68 @@
+<div class="modal-header text-center">
+	<div class="row">
+		<h3 class="modal-title concert" id="modal-title">{{model.book.title}}</h3>
+	</div>
+</div>
+<div class="modal-body mono" id="modal-body">
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="row">
+				<div class="col-sm-6">
+					<h4><b>Authors: </b> <span ng-repeat="author in model.book.authors">{{author}}, </span></h4>
+				</div>
+				<div class="col-sm-6">
+					<h4><b>Genres: </b> <span ng-repeat="genre in model.book.genre">{{genre}},  </span></h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-7">
+					<h4><b>ISBN: </b> {{model.book.ISBN}}</h4>
+				</div>
+				<div class="col-sm-5">
+					<h4><b>Price: </b> {{model.book.price}}</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-11">
+					<h4><b>Description: </b>{{model.book.description}}</h4>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-sm-2">
+			<img class="book-img" ng-src="{{model.book.imgSrc}}" title="{{model.book.title}}">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<h4><b>Copies:</b></h4>
+		</div>
+	</div>
+	<div class="row" ng-repeat="copy in model.book.copies">
+		<div class="col-sm-12" ng-show="copy.isBorrowed">
+			<button class="btn btn-danger" ng-click="model.deleteCopy(copy)">x</button>
+			<span>{{copy.copyId}} is borrowed by - {{copy.lastBorrower.name}}</span>
+			<button class="btn btn-success" ng-click="model.returnCopy(copy)">Return</button>
+		</div>
+		<div class="col-sm-12" ng-hide="copy.isBorrowed">
+			<div class="row">
+				<div class="col-sm-10">
+					<button class="btn btn-danger" ng-click="model.deleteCopy(copy, model.book)">x</button>
+					<span>{{copy.copyId}}:</span>
+					<span ng-show="copy.lastBorrower"> Last borrowed by: {{copy.lastBorrower.name}},</span>
+					<span ng-show="copy.lastBorrower">Date: {{copy.borrowedDate.toString().substring(0, 10).split('-').reverse().join('/')}}</span>
+					<input placeholder="ID here" ng-model="copy.borrowerId" minlength="9" maxlength="9" />
+					<button class="btn btn-info" ng-click="model.borrow(copy)">Borrow</button>
+				</div>
+			</div>
+			<div class="row" ng-show="copy.errorBorrowing">
+				<div class="col-sm-9">
+					<p class="help-block">Invalid input, not legal characters / not registered id</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="model.ok()">OK</button>
+</div>

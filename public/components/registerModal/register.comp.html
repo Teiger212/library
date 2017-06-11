@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <div class="row">
+		<div class="col-sm-9">
+			<h3 class="modal-title mono" id="modal-title">Register new user</h3>
+		</div>
+		<div class="col-sm-3">
+			<button class="btn btn-danger pull-right" type="button" ng-click="model.cancel()">X</button>
+		</div>
+	</div>
+</div>
+<div class="modal-body mono" id="modal-body">
+  <form>
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 form-group">
+				<label>email:</label>
+				<input type="text" class="form-control" placeholder="example@email.com" ng-model="model.email" required>
+			</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 form-group">
+        <label>password:</label>
+        <input type="text" class="form-control" placeholder="secret" ng-model="model.pass" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 form-group">
+        <label>confirm:</label>
+        <input type="text" class="form-control" placeholder="and again...." ng-model="model.confirm" required>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="model.ok()">OK</button>
+</div>

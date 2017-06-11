@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default big" ng-show="model.loginService.isAuthenticated">
+    <img class="logo" src="pics/calgary.png" alt="Calgary">
+    <!--<a class="navbar-brand mono" href="#">
+      Experis Library
+    </a>-->
+    <ul class="nav navbar-nav concert">
+      <li>
+        <a ui-sref="books" ui-sref-active="active">Home - Books</a>
+      </li>
+      <li>
+        <a ui-sref="borrowers" ui-sref-active="active">Borrowers</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right concert">
+      <li><a ui-sref="report"><del>Reports</del></a></li>
+      <li><a href="#" ng-click="model.logout($event)">logout</a></li>
+    </ul>
+</nav>

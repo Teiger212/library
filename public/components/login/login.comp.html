@@ -1,0 +1,20 @@
+<div class="loginContainer">
+  <form ng-submit="model.login($event)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address:</label>
+      <input type="email" class="form-control" ng-model="model.email" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password:</label>
+      <input type="password" class="form-control" ng-model="model.password" placeholder="Password" required>
+    </div>
+    <p class="help-block" ng-show="model.loginError">Email or password invalid</p>
+    <button type="submit" class="btn btn-primary form-control">Login</button>
+  </form>
+  <hr />
+  <p class="text-center">OR</p>
+  <button type="submit" class="btn btn-success form-control" ng-click="model.register($event)">Register</button>
+</div>
+<div class="row">
+  	<img src="pics/calgary.png" alt="Calgary" class="loginLogo">
+</div>

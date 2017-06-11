@@ -1,0 +1,25 @@
+{
+  "name": "test4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "prestart": "echo 'HELLO'",
+    "test": "nodemon --exec mocha -R min"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "mocha": "^3.4.1",
+    "mongoose": "^4.9.3",
+    "mongoose-deep-populate": "^3.0.0",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "serve-favicon": "^2.4.3"
+  }
+}

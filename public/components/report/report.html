@@ -1,0 +1,77 @@
+<uib-tabset active="active">
+    <uib-tab index="1" heading="borrowed books">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>title</td>
+                    <td>copy Id</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tr ng-repeat="book in borrowedBooks">
+                <td>{{book.title}} </td>
+                <td>
+                    <ul style="list-style:none">
+                        <li ng-repeat="copy in book.copies">{{copy.copyId}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </uib-tab>
+    <uib-tab index="2">
+        <uib-tab-heading>
+            late books
+        </uib-tab-heading>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>title</td>
+                    <td>copy Id</td>
+                </tr>
+            </thead>
+            <tbody>
+           
+            <tr ng-repeat="book in lateBooks">
+                <td>{{book.title}} </td>
+                <td>
+                    <ul style="list-style:none">
+                        <li ng-repeat="copy in book.copies">{{copy.copyId}}</li>
+                    </ul>
+                </td>
+            </tr>
+             </tbody>
+            </table>
+
+    </uib-tab>
+    <uib-tab index="3">
+        <uib-tab-heading>
+            Active Borrowers
+        </uib-tab-heading>
+        <table class="table">
+
+        <thead>
+        	<tr>
+        		<td>Name</td>
+        		<td>email</td>
+        		<td>Phone</td>
+
+        	</tr>
+        	
+
+        </thead>
+        <tbody>
+        <tr ng-repeat="borrower in activeBorrowers">
+        <td>{{borrower.name}}</td>
+        <td>{{borrower.email}}</td>
+        <td>{{borrower.phone}}</td>
+
+
+        </tr>
+
+        </tbody>
+
+
+        </table>
+    </uib-tab>
+</uib-tabset>

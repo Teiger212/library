@@ -1,0 +1,57 @@
+<div class="row">
+	<form ng-submit="model.searchForBorrowers()">
+		<div class="col-sm-5 col-sm-offset-3">
+			<input type="text" class="form-control" placeholder="Search for borrowers" ng-model="model.searchText" required autofocus>
+		</div>
+		<div class="col-sm-1">
+			<button type="submit" class="btn btn-primary">Search</button>
+		</div>
+		<div class="col-sm-1">
+			<button type="add borrower" class="btn btn-info" ng-click="model.addBorrowers($event)">Add Borrower</button>
+		</div>
+	</form>
+</div>
+<div class="row" ng-hide="model.borrowers">
+	<img src="pics/calgary.png" alt="Calgary" class="dashboardLogo">
+</div>
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3" ng-show="model.borrowers">
+		<div class="text-center" ng-if="model.borrowers.length == 0">
+			<h3 class="text-center concert">
+				No borrower found
+			</h3>
+		</div>
+		<div class="borrowers-list-container" ng-show="model.borrowers" ng-if="model.borrowers.length !== 0">
+			<h2 class="text-center mono">
+				Borrower Names:
+			</h2>
+			<div class="borrower-container text-center" ng-repeat="borrower in model.borrowers" ng-click="showDetails = ! showDetails">
+				<h3>
+					{{borrower.name}}
+				</h3>
+				<div ng-show="showDetails">
+					<div class="row">
+						<div class="col-sm-6">
+							<h4><b>ID: </b> {{borrower.ID}}</h4>
+						</div>
+						<div class="col-sm-6">
+							<h4><b>Phone no.: </b> {{borrower.phone}}</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<h4><b>Address: </b> {{borrower.address}}</h4>
+						</div>
+						<div class="col-sm-6">
+							<h4><b>E-Mail: </b> {{borrower.email}}</h4>
+						</div>
+					</div>
+					<div class="row books">
+						<h4><b>Borrowed Books (by copyID): </b></h4>
+						<button type="button" class="btn btn-warning" ng-click="model.openBorrowedBook()" ng-repeat="copy in borrower.borrowedBooks"> {{copy.copyId}} </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

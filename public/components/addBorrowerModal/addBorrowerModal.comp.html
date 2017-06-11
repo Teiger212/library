@@ -1,0 +1,41 @@
+<div class="modal-header">
+    <h3 class="modal-title mono" id="modal-title">Add Borrowers</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" placeholder="First Name" ng-model="model.borrower.firstName">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" ng-model="model.borrower.lastName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label for="ID">ID</label>
+                <input type="text" class="form-control" placeholder="ID" ng-model="model.borrower.ID">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" placeholder="Email" ng-model="model.borrower.email">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" placeholder="Phone" ng-model="model.borrower.phone">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" placeholder="Address" ng-model="model.borrower.address">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="model.addBorrower()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="model.cancel()">Cancel</button>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+	<form ng-submit="model.searchForBooks()">
+		<div class="col-sm-5 col-sm-offset-3">
+			<input type="text" class="form-control" placeholder="Search for books" ng-model="model.searchText" required autofocus minlength=2>
+		</div>
+		<div class="col-sm-1">
+			<button type="submit" class="btn btn-primary">Search</button>
+		</div>
+		<div class="col-sm-1">
+			<button ng-click="model.addBook($event)" class="btn btn-info">Add Book</button>
+		</div>
+	</form>
+</div>
+<div class="row" ng-hide="model.books">
+	<img src="pics/calgary.png" alt="Calgary" class="dashboardLogo">
+</div>
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2" ng-show="model.books">
+		<div ng-if="model.books.length == 0">
+			<h3 class="text-center concert">
+				No book found
+			</h3>
+		</div>
+		<div class="book-list-container" ng-show="model.books" ng-if="model.books.length !== 0">
+			<h2 class="text-center mono">
+				Book titles:
+			</h2>
+			<div class="book-container col-sm-3" ng-repeat="book in model.books" ng-click="model.showDetails($event, book)">
+				<div class="row text-center">
+					<img ng-src="{{book.imgSrc}}" title="Image of {{book.title}}" class="book-img">
+					<h3> {{book.title}} </h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
